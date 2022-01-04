@@ -1,40 +1,28 @@
 package nl.jellejurre.biomesampler;
 
 import nl.jellejurre.biomesampler.minecraft.Biome;
-import nl.jellejurre.biomesampler.minecraft.BiomeKey;
-import nl.jellejurre.biomesampler.minecraft.BiomeRegistry;
 import nl.jellejurre.biomesampler.minecraft.MathHelper;
-import nl.jellejurre.biomesampler.minecraft.SimplexNoiseSampler;
-import nl.kallestruik.noisesampler.minecraft.GenerationShapeConfig;
+import nl.kallestruik.noisesampler.NoiseSampler;
+import nl.kallestruik.noisesampler.minecraft.Dimension;
 import nl.kallestruik.noisesampler.minecraft.NoiseColumnSampler;
-import nl.kallestruik.noisesampler.minecraft.NoiseRegistry;
-import nl.kallestruik.noisesampler.minecraft.VanillaTerrainParameters;
-import nl.kallestruik.noisesampler.minecraft.Xoroshiro128PlusPlusRandom;
 import nl.kallestruik.noisesampler.minecraft.util.NoiseValuePoint;
 
 public class BiomeSampler {
     long seed;
     NoiseColumnSampler noiseColumnSampler;
-    SimplexNoiseSampler endNoise;
+    Dimension dimension;
 
-    public BiomeSampler(long seed) {
+    public BiomeSampler(long seed, Dimension dimension) {
         this.seed = seed;
-        GenerationShapeConfig config = new GenerationShapeConfig(-64, 384,
-            1, 2, false, false, false,
-            VanillaTerrainParameters.createSurfaceParameters()
-        );
-        NoiseRegistry noiseRegistry = new NoiseRegistry();
-        noiseColumnSampler = new NoiseColumnSampler(config, seed, noiseRegistry);
-        Xoroshiro128PlusPlusRandom lv = new Xoroshiro128PlusPlusRandom(seed);
-        lv.skip(17292);
-        endNoise = new SimplexNoiseSampler(lv);
+        this.dimension = dimension;
+        this.noiseColumnSampler = new NoiseSampler(seed, dimension).getNoiseColumnSampler();
     }
 
-    public Biome getBiome(int x, int y, int z){
-        return getBiome(x,y, z, Dimension.OVERWORLD);
+    public Biome getBiomeFromBlockPos(int x, int y, int z){
+        return getBiomeFromBiomePos(x>>2, y, z>>2);
     }
 
-    public Biome getBiome(int x, int y, int z, Dimension dimension){
+    public Biome getBiomeFromBiomePos(int x, int y, int z){
         switch (dimension){
             case OVERWORLD:
                 return getBiomeAtPoint(noiseColumnSampler.sample(x, y, z), dimension);
@@ -50,24 +38,7 @@ public class BiomeSampler {
         return BiomeEntries.lists.get(dimension).method_39527(point);
     }
 
-    public Biome getEndBiome(int x, int y, int z) {
-        int i = x >> 2;
-        int j = z >> 2;
-        if ((long)i * (long)i + (long)j * (long)j <= 4096L) {
-            return BiomeRegistry.get(BiomeKey.THE_END);
-        } else {
-            float f = getNoiseAt(i * 2 + 1, j * 2 + 1);
-            if (f > 40.0F) {
-                return BiomeRegistry.get(BiomeKey.END_HIGHLANDS);
-            } else if (f >= 0.0F) {
-                return BiomeRegistry.get(BiomeKey.END_MIDLANDS);
-            } else {
-                return f < -20.0F ? BiomeRegistry.get(BiomeKey.SMALL_END_ISLANDS) : BiomeRegistry.get(BiomeKey.END_BARRENS);
-            }
-        }
-    }
-
-    public float getNoiseAt(int i, int j) {
+    private float getNoiseAt(int i, int j) {
         int k = i / 2;
         int l = j / 2;
         int m = i % 2;
@@ -78,7 +49,7 @@ public class BiomeSampler {
             for (int p = -12; p <= 12; ++p) {
                 long q = k + o;
                 long r = l + p;
-                if (q * q + r * r <= 4096L || !(endNoise.sample(q, r) < (double)-0.9f)) continue;
+                if (q * q + r * r <= 4096L || !(noiseColumnSampler.islandNoise.sample(q, r) < (double)-0.9f)) continue;
                 float g = (MathHelper.abs(q) * 3439.0f + MathHelper.abs(r) * 147.0f) % 13.0f + 9.0f;
                 float h = m - o * 2;
                 float s = n - p * 2;
@@ -88,5 +59,22 @@ public class BiomeSampler {
             }
         }
         return f;
+    }
+
+    private Biome getEndBiome(int x, int y, int z) {
+        int i = x >> 2;
+        int j = z >> 2;
+        if ((long)i * (long)i + (long)j * (long)j <= 4096L) {
+            return Biome.THE_END;
+        } else {
+            float f = getNoiseAt(i * 2 + 1, j * 2 + 1);
+            if (f > 40.0F) {
+                return Biome.END_HIGHLANDS;
+            } else if (f >= 0.0F) {
+                return Biome.END_MIDLANDS;
+            } else {
+                return f < -20.0F ? Biome.SMALL_END_ISLANDS : Biome.END_BARRENS;
+            }
+        }
     }
 }

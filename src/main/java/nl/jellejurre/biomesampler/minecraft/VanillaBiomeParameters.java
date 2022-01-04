@@ -35,12 +35,12 @@ public final class VanillaBiomeParameters {
     private final MultiNoiseUtil.ParameterRange NEAR_INLAND_CONTINENTALNESS = MultiNoiseUtil.ParameterRange.of(-0.11f, 0.03f);
     private final MultiNoiseUtil.ParameterRange MID_INLAND_CONTINENTALNESS = MultiNoiseUtil.ParameterRange.of(0.03f, 0.3f);
     private final MultiNoiseUtil.ParameterRange FAR_INLAND_CONTINENTALNESS = MultiNoiseUtil.ParameterRange.of(0.3f, 1.0f);
-    private final BiomeKey[][] OCEAN_BIOMES = new BiomeKey[][]{{BiomeKey.DEEP_FROZEN_OCEAN, BiomeKey.DEEP_COLD_OCEAN, BiomeKey.DEEP_OCEAN, BiomeKey.DEEP_LUKEWARM_OCEAN, BiomeKey.WARM_OCEAN}, {BiomeKey.FROZEN_OCEAN, BiomeKey.COLD_OCEAN, BiomeKey.OCEAN, BiomeKey.LUKEWARM_OCEAN, BiomeKey.WARM_OCEAN}};
-    private final BiomeKey[][] COMMON_BIOMES = new BiomeKey[][]{{BiomeKey.SNOWY_PLAINS, BiomeKey.SNOWY_PLAINS, BiomeKey.SNOWY_PLAINS, BiomeKey.SNOWY_TAIGA, BiomeKey.TAIGA}, {BiomeKey.PLAINS, BiomeKey.PLAINS, BiomeKey.FOREST, BiomeKey.TAIGA, BiomeKey.OLD_GROWTH_SPRUCE_TAIGA}, {BiomeKey.FLOWER_FOREST, BiomeKey.PLAINS, BiomeKey.FOREST, BiomeKey.BIRCH_FOREST, BiomeKey.DARK_FOREST}, {BiomeKey.SAVANNA, BiomeKey.SAVANNA, BiomeKey.FOREST, BiomeKey.JUNGLE, BiomeKey.JUNGLE}, {BiomeKey.DESERT, BiomeKey.DESERT, BiomeKey.DESERT, BiomeKey.DESERT, BiomeKey.DESERT}};
-    private final BiomeKey[][] UNCOMMON_BIOMES = new BiomeKey[][]{{BiomeKey.ICE_SPIKES, null, BiomeKey.SNOWY_TAIGA, null, null}, {null, null, null, null, BiomeKey.OLD_GROWTH_PINE_TAIGA}, {BiomeKey.SUNFLOWER_PLAINS, null, null, BiomeKey.OLD_GROWTH_BIRCH_FOREST, null}, {null, null, BiomeKey.PLAINS, BiomeKey.SPARSE_JUNGLE, BiomeKey.BAMBOO_JUNGLE}, {null, null, null, null, null}};
-    private final BiomeKey[][] NEAR_MOUNTAIN_BIOMES = new BiomeKey[][]{{BiomeKey.SNOWY_PLAINS, BiomeKey.SNOWY_PLAINS, BiomeKey.SNOWY_PLAINS, BiomeKey.SNOWY_TAIGA, BiomeKey.SNOWY_TAIGA}, {BiomeKey.MEADOW, BiomeKey.MEADOW, BiomeKey.FOREST, BiomeKey.TAIGA, BiomeKey.OLD_GROWTH_SPRUCE_TAIGA}, {BiomeKey.MEADOW, BiomeKey.MEADOW, BiomeKey.MEADOW, BiomeKey.MEADOW, BiomeKey.DARK_FOREST}, {BiomeKey.SAVANNA_PLATEAU, BiomeKey.SAVANNA_PLATEAU, BiomeKey.FOREST, BiomeKey.FOREST, BiomeKey.JUNGLE}, {BiomeKey.BADLANDS, BiomeKey.BADLANDS, BiomeKey.BADLANDS, BiomeKey.WOODED_BADLANDS, BiomeKey.WOODED_BADLANDS}};
-    private final BiomeKey[][] SPECIAL_NEAR_MOUNTAIN_BIOMES = new BiomeKey[][]{{BiomeKey.ICE_SPIKES, null, null, null, null}, {null, null, BiomeKey.MEADOW, BiomeKey.MEADOW, BiomeKey.OLD_GROWTH_PINE_TAIGA}, {null, null, BiomeKey.FOREST, BiomeKey.BIRCH_FOREST, null}, {null, null, null, null, null}, {BiomeKey.ERODED_BADLANDS, BiomeKey.ERODED_BADLANDS, null, null, null}};
-    private final BiomeKey[][] HILL_BIOMES = new BiomeKey[][]{{BiomeKey.WINDSWEPT_GRAVELLY_HILLS, BiomeKey.WINDSWEPT_GRAVELLY_HILLS, BiomeKey.WINDSWEPT_HILLS, BiomeKey.WINDSWEPT_FOREST, BiomeKey.WINDSWEPT_FOREST}, {BiomeKey.WINDSWEPT_GRAVELLY_HILLS, BiomeKey.WINDSWEPT_GRAVELLY_HILLS, BiomeKey.WINDSWEPT_HILLS, BiomeKey.WINDSWEPT_FOREST, BiomeKey.WINDSWEPT_FOREST}, {BiomeKey.WINDSWEPT_HILLS, BiomeKey.WINDSWEPT_HILLS, BiomeKey.WINDSWEPT_HILLS, BiomeKey.WINDSWEPT_FOREST, BiomeKey.WINDSWEPT_FOREST}, {null, null, null, null, null}, {null, null, null, null, null}};
+    private final Biome[][] OCEAN_BIOMES = new Biome[][]{{Biome.DEEP_FROZEN_OCEAN, Biome.DEEP_COLD_OCEAN, Biome.DEEP_OCEAN, Biome.DEEP_LUKEWARM_OCEAN, Biome.WARM_OCEAN}, {Biome.FROZEN_OCEAN, Biome.COLD_OCEAN, Biome.OCEAN, Biome.LUKEWARM_OCEAN, Biome.WARM_OCEAN}};
+    private final Biome[][] COMMON_BIOMES = new Biome[][]{{Biome.SNOWY_PLAINS, Biome.SNOWY_PLAINS, Biome.SNOWY_PLAINS, Biome.SNOWY_TAIGA, Biome.TAIGA}, {Biome.PLAINS, Biome.PLAINS, Biome.FOREST, Biome.TAIGA, Biome.OLD_GROWTH_SPRUCE_TAIGA}, {Biome.FLOWER_FOREST, Biome.PLAINS, Biome.FOREST, Biome.BIRCH_FOREST, Biome.DARK_FOREST}, {Biome.SAVANNA, Biome.SAVANNA, Biome.FOREST, Biome.JUNGLE, Biome.JUNGLE}, {Biome.DESERT, Biome.DESERT, Biome.DESERT, Biome.DESERT, Biome.DESERT}};
+    private final Biome[][] UNCOMMON_BIOMES = new Biome[][]{{Biome.ICE_SPIKES, null, Biome.SNOWY_TAIGA, null, null}, {null, null, null, null, Biome.OLD_GROWTH_PINE_TAIGA}, {Biome.SUNFLOWER_PLAINS, null, null, Biome.OLD_GROWTH_BIRCH_FOREST, null}, {null, null, Biome.PLAINS, Biome.SPARSE_JUNGLE, Biome.BAMBOO_JUNGLE}, {null, null, null, null, null}};
+    private final Biome[][] NEAR_MOUNTAIN_BIOMES = new Biome[][]{{Biome.SNOWY_PLAINS, Biome.SNOWY_PLAINS, Biome.SNOWY_PLAINS, Biome.SNOWY_TAIGA, Biome.SNOWY_TAIGA}, {Biome.MEADOW, Biome.MEADOW, Biome.FOREST, Biome.TAIGA, Biome.OLD_GROWTH_SPRUCE_TAIGA}, {Biome.MEADOW, Biome.MEADOW, Biome.MEADOW, Biome.MEADOW, Biome.DARK_FOREST}, {Biome.SAVANNA_PLATEAU, Biome.SAVANNA_PLATEAU, Biome.FOREST, Biome.FOREST, Biome.JUNGLE}, {Biome.BADLANDS, Biome.BADLANDS, Biome.BADLANDS, Biome.WOODED_BADLANDS, Biome.WOODED_BADLANDS}};
+    private final Biome[][] SPECIAL_NEAR_MOUNTAIN_BIOMES = new Biome[][]{{Biome.ICE_SPIKES, null, null, null, null}, {null, null, Biome.MEADOW, Biome.MEADOW, Biome.OLD_GROWTH_PINE_TAIGA}, {null, null, Biome.FOREST, Biome.BIRCH_FOREST, null}, {null, null, null, null, null}, {Biome.ERODED_BADLANDS, Biome.ERODED_BADLANDS, null, null, null}};
+    private final Biome[][] HILL_BIOMES = new Biome[][]{{Biome.WINDSWEPT_GRAVELLY_HILLS, Biome.WINDSWEPT_GRAVELLY_HILLS, Biome.WINDSWEPT_HILLS, Biome.WINDSWEPT_FOREST, Biome.WINDSWEPT_FOREST}, {Biome.WINDSWEPT_GRAVELLY_HILLS, Biome.WINDSWEPT_GRAVELLY_HILLS, Biome.WINDSWEPT_HILLS, Biome.WINDSWEPT_FOREST, Biome.WINDSWEPT_FOREST}, {Biome.WINDSWEPT_HILLS, Biome.WINDSWEPT_HILLS, Biome.WINDSWEPT_HILLS, Biome.WINDSWEPT_FOREST, Biome.WINDSWEPT_FOREST}, {null, null, null, null, null}, {null, null, null, null, null}};
 
     public List<MultiNoiseUtil.NoiseHypercube> getSpawnSuitabilityNoises() {
         MultiNoiseUtil.ParameterRange lv = MultiNoiseUtil.ParameterRange.of(0.0f);
@@ -56,11 +56,11 @@ public final class VanillaBiomeParameters {
     }
 
     private void writeOceanBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, Biome>> parameters) {
-        this.writeBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.MUSHROOM_FIELDS_CONTINENTALNESS, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, BiomeRegistry.get(BiomeKey.MUSHROOM_FIELDS));
+        this.writeBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.MUSHROOM_FIELDS_CONTINENTALNESS, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, Biome.MUSHROOM_FIELDS);
         for (int i = 0; i < this.TEMPERATURE_PARAMETERS.length; ++i) {
             MultiNoiseUtil.ParameterRange lv = this.TEMPERATURE_PARAMETERS[i];
-            this.writeBiomeParameters(parameters, lv, this.DEFAULT_PARAMETER, this.DEEP_OCEAN_CONTINENTALNESS, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, BiomeRegistry.get(this.OCEAN_BIOMES[0][i]));
-            this.writeBiomeParameters(parameters, lv, this.DEFAULT_PARAMETER, this.OCEAN_CONTINENTALNESS, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, BiomeRegistry.get(this.OCEAN_BIOMES[1][i]));
+            this.writeBiomeParameters(parameters, lv, this.DEFAULT_PARAMETER, this.DEEP_OCEAN_CONTINENTALNESS, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f,  (this.OCEAN_BIOMES[0][i]));
+            this.writeBiomeParameters(parameters, lv, this.DEFAULT_PARAMETER, this.OCEAN_CONTINENTALNESS, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f,  (this.OCEAN_BIOMES[1][i]));
         }
     }
 
@@ -138,8 +138,8 @@ public final class VanillaBiomeParameters {
     }
 
     private void writeMixedBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, Biome>> parameters, MultiNoiseUtil.ParameterRange weirdness) {
-        this.writeBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[2]), weirdness, 0.0f, BiomeRegistry.get(BiomeKey.STONY_SHORE));
-        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.NEAR_INLAND_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, BiomeRegistry.get(BiomeKey.SWAMP));
+        this.writeBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[2]), weirdness, 0.0f, Biome.STONY_SHORE);
+        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.NEAR_INLAND_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, Biome.SWAMP);
         for (int i = 0; i < this.TEMPERATURE_PARAMETERS.length; ++i) {
             MultiNoiseUtil.ParameterRange lv = this.TEMPERATURE_PARAMETERS[i];
             for (int j = 0; j < this.HUMIDITY_PARAMETERS.length; ++j) {
@@ -182,8 +182,8 @@ public final class VanillaBiomeParameters {
     }
 
     private void writeBiomesNearRivers(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, Biome>> parameters, MultiNoiseUtil.ParameterRange weirdness) {
-        this.writeBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[2]), weirdness, 0.0f, BiomeRegistry.get(BiomeKey.STONY_SHORE));
-        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.NEAR_INLAND_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, BiomeRegistry.get(BiomeKey.SWAMP));
+        this.writeBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[2]), weirdness, 0.0f, Biome.STONY_SHORE);
+        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.NEAR_INLAND_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, Biome.SWAMP);
         for (int i = 0; i < this.TEMPERATURE_PARAMETERS.length; ++i) {
             MultiNoiseUtil.ParameterRange lv = this.TEMPERATURE_PARAMETERS[i];
             for (int j = 0; j < this.HUMIDITY_PARAMETERS.length; ++j) {
@@ -211,16 +211,16 @@ public final class VanillaBiomeParameters {
     }
 
     private void writeRiverBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, Biome>> parameters, MultiNoiseUtil.ParameterRange weirdness) {
-        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, weirdness.max() < 0L ? BiomeRegistry.get(BiomeKey.STONY_SHORE) : BiomeRegistry.get(BiomeKey.FROZEN_RIVER));
-        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, weirdness.max() < 0L ? BiomeRegistry.get(BiomeKey.STONY_SHORE) : BiomeRegistry.get(BiomeKey.RIVER));
-        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, this.NEAR_INLAND_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, BiomeRegistry.get(BiomeKey.FROZEN_RIVER));
-        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, this.NEAR_INLAND_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, BiomeRegistry.get(BiomeKey.RIVER));
-        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.SHORE_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[2], this.EROSION_PARAMETERS[5]), weirdness, 0.0f, BiomeRegistry.get(BiomeKey.FROZEN_RIVER));
-        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.SHORE_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[2], this.EROSION_PARAMETERS[5]), weirdness, 0.0f, BiomeRegistry.get(BiomeKey.RIVER));
-        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, this.EROSION_PARAMETERS[6], weirdness, 0.0f, BiomeRegistry.get(BiomeKey.FROZEN_RIVER));
-        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, this.EROSION_PARAMETERS[6], weirdness, 0.0f, BiomeRegistry.get(BiomeKey.RIVER));
-        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.RIVER_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, BiomeRegistry.get(BiomeKey.SWAMP));
-        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.RIVER_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, BiomeRegistry.get(BiomeKey.FROZEN_RIVER));
+        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, weirdness.max() < 0L ? Biome.STONY_SHORE : Biome.FROZEN_RIVER);
+        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, weirdness.max() < 0L ? Biome.STONY_SHORE : Biome.RIVER);
+        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, this.NEAR_INLAND_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, Biome.FROZEN_RIVER);
+        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, this.NEAR_INLAND_CONTINENTALNESS, MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[0], this.EROSION_PARAMETERS[1]), weirdness, 0.0f, Biome.RIVER);
+        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.SHORE_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[2], this.EROSION_PARAMETERS[5]), weirdness, 0.0f, Biome.FROZEN_RIVER);
+        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.SHORE_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), MultiNoiseUtil.ParameterRange.combine(this.EROSION_PARAMETERS[2], this.EROSION_PARAMETERS[5]), weirdness, 0.0f, Biome.RIVER);
+        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, this.EROSION_PARAMETERS[6], weirdness, 0.0f, Biome.FROZEN_RIVER);
+        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, this.SHORE_CONTINENTALNESS, this.EROSION_PARAMETERS[6], weirdness, 0.0f, Biome.RIVER);
+        this.writeBiomeParameters(parameters, this.NON_FROZEN_TEMPERATURE_PARAMETERS, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.RIVER_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, Biome.SWAMP);
+        this.writeBiomeParameters(parameters, this.FROZEN_TEMPERATURE, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.combine(this.RIVER_CONTINENTALNESS, this.FAR_INLAND_CONTINENTALNESS), this.EROSION_PARAMETERS[6], weirdness, 0.0f, Biome.FROZEN_RIVER);
         for (int i = 0; i < this.TEMPERATURE_PARAMETERS.length; ++i) {
             MultiNoiseUtil.ParameterRange lv = this.TEMPERATURE_PARAMETERS[i];
             for (int j = 0; j < this.HUMIDITY_PARAMETERS.length; ++j) {
@@ -232,16 +232,16 @@ public final class VanillaBiomeParameters {
     }
 
     private void writeCaveBiomes(Consumer<Pair<MultiNoiseUtil.NoiseHypercube, Biome>> parameters) {
-        this.writeCaveBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(0.8f, 1.0f), this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, BiomeRegistry.get(BiomeKey.DRIPSTONE_CAVES));
-        this.writeCaveBiomeParameters(parameters, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(0.7f, 1.0f), this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, BiomeRegistry.get(BiomeKey.LUSH_CAVES));
+        this.writeCaveBiomeParameters(parameters, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(0.8f, 1.0f), this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, Biome.DRIPSTONE_CAVES);
+        this.writeCaveBiomeParameters(parameters, this.DEFAULT_PARAMETER, MultiNoiseUtil.ParameterRange.of(0.7f, 1.0f), this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, this.DEFAULT_PARAMETER, 0.0f, Biome.LUSH_CAVES);
     }
 
     private Biome getRegularBiome(int temperature, int humidity, MultiNoiseUtil.ParameterRange weirdness) {
         if (weirdness.max() < 0L) {
-            return BiomeRegistry.get(this.COMMON_BIOMES[temperature][humidity]);
+            return (this.COMMON_BIOMES[temperature][humidity]);
         }
-        Biome lv = BiomeRegistry.get(this.UNCOMMON_BIOMES[temperature][humidity]);
-        return lv == null ? BiomeRegistry.get(this.COMMON_BIOMES[temperature][humidity]) : lv;
+        Biome lv = (this.UNCOMMON_BIOMES[temperature][humidity]);
+        return lv == null ? (this.COMMON_BIOMES[temperature][humidity]) : lv;
     }
 
     private Biome getBadlandsOrRegularBiome(int temperature, int humidity, MultiNoiseUtil.ParameterRange weirdness) {
@@ -254,7 +254,7 @@ public final class VanillaBiomeParameters {
 
     private Biome getBiomeOrWindsweptSavanna(int temperature, int humidity, MultiNoiseUtil.ParameterRange weirdness, Biome biome) {
         if (temperature > 1 && humidity < 4 && weirdness.max() >= 0L) {
-            return BiomeRegistry.get(BiomeKey.WINDSWEPT_SAVANNA);
+            return Biome.WINDSWEPT_SAVANNA;
         }
         return biome;
     }
@@ -266,38 +266,38 @@ public final class VanillaBiomeParameters {
 
     private Biome getShoreBiome(int temperature, int humidity) {
         if (temperature == 0) {
-            return BiomeRegistry.get(BiomeKey.SNOWY_BEACH);
+            return Biome.SNOWY_BEACH;
         }
         if (temperature == 4) {
-            return BiomeRegistry.get(BiomeKey.DESERT);
+            return Biome.DESERT;
         }
-        return BiomeRegistry.get(BiomeKey.BEACH);
+        return Biome.BEACH;
     }
 
     private Biome getBadlandsBiome(int humidity, MultiNoiseUtil.ParameterRange weirdness) {
         if (humidity < 2) {
-            return weirdness.max() < 0L ? BiomeRegistry.get(BiomeKey.ERODED_BADLANDS) : BiomeRegistry.get(BiomeKey.BADLANDS);
+            return weirdness.max() < 0L ? Biome.ERODED_BADLANDS : Biome.BADLANDS;
         }
         if (humidity < 3) {
-            return BiomeRegistry.get(BiomeKey.BADLANDS);
+            return Biome.BADLANDS;
         }
-        return BiomeRegistry.get(BiomeKey.WOODED_BADLANDS);
+        return Biome.WOODED_BADLANDS;
     }
 
     private Biome getNearMountainBiome(int temperature, int humidity, MultiNoiseUtil.ParameterRange weirdness) {
         if (weirdness.max() < 0L) {
-            return BiomeRegistry.get(this.NEAR_MOUNTAIN_BIOMES[temperature][humidity]);
+            return  (this.NEAR_MOUNTAIN_BIOMES[temperature][humidity]);
         }
-        Biome lv = BiomeRegistry.get(this.SPECIAL_NEAR_MOUNTAIN_BIOMES[temperature][humidity]);
-        return lv == null ? BiomeRegistry.get(this.NEAR_MOUNTAIN_BIOMES[temperature][humidity]) : lv;
+        Biome lv =  (this.SPECIAL_NEAR_MOUNTAIN_BIOMES[temperature][humidity]);
+        return lv == null ?  (this.NEAR_MOUNTAIN_BIOMES[temperature][humidity]) : lv;
     }
 
     private Biome getPeakBiome(int temperature, int humidity, MultiNoiseUtil.ParameterRange weirdness) {
         if (temperature <= 2) {
-            return weirdness.max() < 0L ? BiomeRegistry.get(BiomeKey.JAGGED_PEAKS) : BiomeRegistry.get(BiomeKey.FROZEN_PEAKS);
+            return weirdness.max() < 0L ? Biome.JAGGED_PEAKS : Biome.FROZEN_PEAKS;
         }
         if (temperature == 3) {
-            return BiomeRegistry.get(BiomeKey.STONY_PEAKS);
+            return Biome.STONY_PEAKS;
         }
         return this.getBadlandsBiome(humidity, weirdness);
     }
@@ -307,13 +307,13 @@ public final class VanillaBiomeParameters {
             return this.getNearMountainBiome(temperature, humidity, weirdness);
         }
         if (humidity <= 1) {
-            return BiomeRegistry.get(BiomeKey.SNOWY_SLOPES);
+            return Biome.SNOWY_SLOPES;
         }
-        return BiomeRegistry.get(BiomeKey.GROVE);
+        return Biome.GROVE;
     }
 
     private Biome getHillBiome(int temperature, int humidity, MultiNoiseUtil.ParameterRange weirdness) {
-        Biome lv = BiomeRegistry.get(this.HILL_BIOMES[temperature][humidity]);
+        Biome lv =  (this.HILL_BIOMES[temperature][humidity]);
         return lv == null ? this.getRegularBiome(temperature, humidity, weirdness) : lv;
     }
 

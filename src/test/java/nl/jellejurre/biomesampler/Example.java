@@ -4,22 +4,23 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 import nl.jellejurre.biomesampler.minecraft.Biome;
-import nl.jellejurre.biomesampler.minecraft.BiomeKey;
-import nl.jellejurre.biomesampler.minecraft.BiomeRegistry;
+import nl.kallestruik.noisesampler.minecraft.Dimension;
 import org.junit.jupiter.api.Test;
 
 public class Example {
     @Test
     public void Example(){
-        BiomeSampler sampler = new BiomeSampler(1L);
-        //To turn real world coords into biome coords, divide by 4
-        Biome overworldBiome = sampler.getBiome(1162/4, 66, -575/4, Dimension.OVERWORLD);
+        BiomeSampler overworldSampler = new BiomeSampler(1L, Dimension.OVERWORLD);
+        Biome overworldBiome = overworldSampler.getBiomeFromBlockPos(1162, 66, -575);
+        
+        BiomeSampler netherSampler = new BiomeSampler(1L, Dimension.NETHER);
+        Biome netherBiome = netherSampler.getBiomeFromBlockPos(1162, 66, -575);
 
-        Biome netherBiome = sampler.getBiome(1162/4, 66, -575/4, Dimension.NETHER);
+        BiomeSampler endSampler = new BiomeSampler(1L, Dimension.THEEND);
+        Biome endBiome = endSampler.getBiomeFromBlockPos(1162, 66, -575);
 
-        Biome endBiome = sampler.getBiome(1162/4, 66, -575/4, Dimension.THEEND);
-        assertEquals(BiomeRegistry.get(BiomeKey.DARK_FOREST), overworldBiome);
-        assertEquals(BiomeRegistry.get(BiomeKey.NETHER_WASTES), netherBiome);
-        assertEquals(BiomeRegistry.get(BiomeKey.END_BARRENS), endBiome);
+        assertEquals(Biome.DARK_FOREST, overworldBiome);
+        assertEquals(Biome.NETHER_WASTES, netherBiome);
+        assertEquals(Biome.END_BARRENS, endBiome);
     }
 }

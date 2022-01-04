@@ -145,7 +145,7 @@ public class MultiNoiseUtil {
         public List<Pair<MultiNoiseUtil.NoiseHypercube, T>> getEntries() {
             return this.entries;
         }
-        
+
         public T method_39530(NoiseValuePoint noiseValuePoint, T object) {
             long l = 9223372036854775807L;
             T object2 = object;
