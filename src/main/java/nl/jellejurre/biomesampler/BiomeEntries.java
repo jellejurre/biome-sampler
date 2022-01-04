@@ -1,11 +1,13 @@
+package nl.jellejurre.biomesampler;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import minecraft.Biome;
-import minecraft.BiomeKey;
-import minecraft.BiomeRegistry;
-import minecraft.MultiNoiseUtil;
-import minecraft.VanillaBiomeParameters;
+import nl.jellejurre.biomesampler.minecraft.Biome;
+import nl.jellejurre.biomesampler.minecraft.BiomeKey;
+import nl.jellejurre.biomesampler.minecraft.BiomeRegistry;
+import nl.jellejurre.biomesampler.minecraft.MultiNoiseUtil;
+import nl.jellejurre.biomesampler.minecraft.VanillaBiomeParameters;
 import nl.kallestruik.noisesampler.minecraft.util.Pair;
 
 public class BiomeEntries {
@@ -25,7 +27,6 @@ public class BiomeEntries {
                 BiomeRegistry.get(BiomeKey.WARPED_FOREST)),
             Pair.of(MultiNoiseUtil.createNoiseHypercube(-0.5f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.175f),
                 BiomeRegistry.get(BiomeKey.BASALT_DELTAS)))));
-//        lists.put(Dimension.THEEND, new MultiNoiseUtil.Entries<>(null));
     }
 
 }

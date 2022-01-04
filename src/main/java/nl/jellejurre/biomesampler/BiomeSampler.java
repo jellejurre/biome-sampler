@@ -1,20 +1,15 @@
-import static minecraft.BiomeRegistry.biomeMap;
+package nl.jellejurre.biomesampler;
 
-
-import com.sun.source.tree.BreakTree;
-import java.util.function.Supplier;
-import minecraft.Biome;
-import minecraft.BiomeKey;
-import minecraft.BiomeRegistry;
-import minecraft.MathHelper;
-import minecraft.SimplexNoiseSampler;
-import nl.kallestruik.noisesampler.NoiseSampler;
+import nl.jellejurre.biomesampler.minecraft.Biome;
+import nl.jellejurre.biomesampler.minecraft.BiomeKey;
+import nl.jellejurre.biomesampler.minecraft.BiomeRegistry;
+import nl.jellejurre.biomesampler.minecraft.MathHelper;
+import nl.jellejurre.biomesampler.minecraft.SimplexNoiseSampler;
 import nl.kallestruik.noisesampler.minecraft.GenerationShapeConfig;
 import nl.kallestruik.noisesampler.minecraft.NoiseColumnSampler;
 import nl.kallestruik.noisesampler.minecraft.NoiseRegistry;
 import nl.kallestruik.noisesampler.minecraft.VanillaTerrainParameters;
 import nl.kallestruik.noisesampler.minecraft.Xoroshiro128PlusPlusRandom;
-import nl.kallestruik.noisesampler.minecraft.Xoroshiro128PlusPlusRandomImpl;
 import nl.kallestruik.noisesampler.minecraft.util.NoiseValuePoint;
 
 public class BiomeSampler {

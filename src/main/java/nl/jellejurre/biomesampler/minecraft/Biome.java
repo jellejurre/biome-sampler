@@ -4,13 +4,11 @@
  * Could not load the following classes:
  *  org.jetbrains.annotations.Nullable
  */
-package minecraft;
+package nl.jellejurre.biomesampler.minecraft;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import nl.kallestruik.noisesampler.minecraft.Xoroshiro128PlusPlusRandom;
 
 public final class Biome {
     private final String name;

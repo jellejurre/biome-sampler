@@ -3,7 +3,7 @@
 // (powered by FernFlower decompiler)
 //
 
-package minecraft;
+package nl.jellejurre.biomesampler.minecraft;
 
 
 import java.util.ArrayList;
@@ -12,7 +12,6 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
-import nl.kallestruik.noisesampler.minecraft.NoiseColumnSampler;
 import nl.kallestruik.noisesampler.minecraft.util.NoiseValuePoint;
 import nl.kallestruik.noisesampler.minecraft.util.Pair;
 

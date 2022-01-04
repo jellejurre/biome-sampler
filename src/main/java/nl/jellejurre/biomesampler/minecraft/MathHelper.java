@@ -1,7 +1,7 @@
 /*
  * Decompiled with CFR 0.0.9 (FabricMC cc05e23f).
  */
-package minecraft;
+package nl.jellejurre.biomesampler.minecraft;
 
 import java.util.Random;
 import java.util.UUID;

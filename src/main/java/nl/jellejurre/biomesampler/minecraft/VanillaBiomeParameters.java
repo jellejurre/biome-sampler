@@ -1,12 +1,10 @@
 /*
  * Decompiled with CFR 0.0.9 (FabricMC cc05e23f).
  */
-package minecraft;
+package nl.jellejurre.biomesampler.minecraft;
 
 import java.util.List;
 import java.util.function.Consumer;
-import minecraft.Biome;
-import minecraft.MultiNoiseUtil;
 import nl.kallestruik.noisesampler.minecraft.VanillaTerrainParameters;
 import nl.kallestruik.noisesampler.minecraft.util.Pair;
 

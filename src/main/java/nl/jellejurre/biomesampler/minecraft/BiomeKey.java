@@ -1,6 +1,4 @@
-package minecraft;
-
-import java.rmi.registry.Registry;
+package nl.jellejurre.biomesampler.minecraft;
 
 public enum BiomeKey {
         THE_VOID("the_void"),
