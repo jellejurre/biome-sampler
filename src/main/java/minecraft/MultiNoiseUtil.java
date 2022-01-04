@@ -41,10 +41,6 @@ public class MultiNoiseUtil {
         return (float)l / 10000.0F;
     }
 
-    public static Vec3i findFittestPosition(List<MultiNoiseUtil.NoiseHypercube> noises, NoiseColumnSampler sampler) {
-        return (new MultiNoiseUtil.FittestPositionFinder(noises, sampler)).bestResult.location();
-    }
-
     public static record NoiseHypercube(MultiNoiseUtil.ParameterRange temperature, MultiNoiseUtil.ParameterRange humidity, MultiNoiseUtil.ParameterRange continentalness, MultiNoiseUtil.ParameterRange erosion, MultiNoiseUtil.ParameterRange depth, MultiNoiseUtil.ParameterRange weirdness, long offset) {
         long getSquaredDistance(NoiseValuePoint point) {
             return MathHelper.square(this.temperature.getDistance(point.temperatureNoise())) + MathHelper.square(this.humidity.getDistance(point.humidityNoise())) + MathHelper.square(this.continentalness.getDistance(point.continentalnessNoise())) + MathHelper.square(this.erosion.getDistance(point.erosionNoise())) + MathHelper.square(this.depth.getDistance(point.depth())) + MathHelper.square(this.weirdness.getDistance(point.weirdnessNoise())) + MathHelper.square(this.offset);
@@ -133,63 +129,6 @@ public class MultiNoiseUtil {
         }
     }
 
-    private static class FittestPositionFinder {
-        MultiNoiseUtil.FittestPositionFinder.Result bestResult;
-
-        FittestPositionFinder(List<MultiNoiseUtil.NoiseHypercube> noises, NoiseColumnSampler sampler) {
-            this.bestResult = calculateFitness(noises, sampler, 0, 0);
-            this.findFittest(noises, sampler, 2048.0F, 512.0F);
-            this.findFittest(noises, sampler, 512.0F, 32.0F);
-        }
-
-        private void findFittest(List<MultiNoiseUtil.NoiseHypercube> noises, NoiseColumnSampler sampler, float maxDistance, float step) {
-            float f = 0.0F;
-            float g = step;
-            Vec3i Vec3i = this.bestResult.location();
-
-            while(g <= maxDistance) {
-                int i = Vec3i.getX() + (int)(Math.sin((double)f) * (double)g);
-                int j = Vec3i.getZ() + (int)(Math.cos((double)f) * (double)g);
-                MultiNoiseUtil.FittestPositionFinder.Result result = calculateFitness(noises, sampler, i, j);
-                if (result.fitness() < this.bestResult.fitness()) {
-                    this.bestResult = result;
-                }
-
-                f += step / g;
-                if ((double)f > 6.283185307179586D) {
-                    f = 0.0F;
-                    g += step;
-                }
-            }
-
-        }
-
-        private static MultiNoiseUtil.FittestPositionFinder.Result calculateFitness(List<MultiNoiseUtil.NoiseHypercube> noises, NoiseColumnSampler sampler, int x, int z) {
-            double d = MathHelper.square(2500.0D);
-            int i = 2;
-            long l = (long)((double)MathHelper.square(10000.0F) * Math.pow((double)(MathHelper.square((long)x) + MathHelper.square((long)z)) / d, 2.0D));
-            NoiseValuePoint noiseValuePoint = sampler.sample(x>>2, 0, z>>2);
-            NoiseValuePoint noiseValuePoint2 = new NoiseValuePoint(noiseValuePoint.temperatureNoise(), noiseValuePoint.humidityNoise(), noiseValuePoint.continentalnessNoise(), noiseValuePoint.erosionNoise(), 0L, noiseValuePoint.weirdnessNoise());
-            long m = 9223372036854775807L;
-
-            MultiNoiseUtil.NoiseHypercube noiseHypercube;
-            for(Iterator var13 = noises.iterator(); var13.hasNext(); m = Math.min(m, noiseHypercube.getSquaredDistance(noiseValuePoint2))) {
-                noiseHypercube = (MultiNoiseUtil.NoiseHypercube)var13.next();
-            }
-
-            return new MultiNoiseUtil.FittestPositionFinder.Result(new Vec3i(x, 0, z), l + m);
-        }
-
-        private static record Result(Vec3i location, long fitness) {
-            public Vec3i location() {
-                return this.location;
-            }
-
-            public long fitness() {
-                return this.fitness;
-            }
-        }
-    }
 
     public interface MultiNoiseSampler {
         NoiseValuePoint sample(int x, int y, int z);

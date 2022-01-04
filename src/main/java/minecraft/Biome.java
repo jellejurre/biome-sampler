@@ -29,7 +29,7 @@ public final class Biome {
         return this.category;
     }
 
-    public static enum Category implements StringIdentifiable
+    public static enum Category
     {
         NONE("none"),
         TAIGA("taiga"),
@@ -66,7 +66,6 @@ public final class Biome {
             return BY_NAME.get(name);
         }
 
-        @Override
         public String asString() {
             return this.name;
         }

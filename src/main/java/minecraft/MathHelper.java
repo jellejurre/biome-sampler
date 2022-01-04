@@ -366,9 +366,6 @@ public class MathHelper {
         return value - (double)MathHelper.lfloor(value);
     }
 
-    public static long hashCode(Vec3i vec) {
-        return MathHelper.hashCode(vec.getX(), vec.getY(), vec.getZ());
-    }
 
     public static long hashCode(int x, int y, int z) {
         long l = (long)(x * 3129871) ^ (long)z * 116129781L ^ (long)y;
