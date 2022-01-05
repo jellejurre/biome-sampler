@@ -12,6 +12,10 @@ public class BiomeSampler {
     NoiseColumnSampler noiseColumnSampler;
     Dimension dimension;
 
+    public BiomeSampler(long seed) {
+        this(seed, Dimension.OVERWORLD);
+    }
+
     public BiomeSampler(long seed, Dimension dimension) {
         this.seed = seed;
         this.dimension = dimension;
