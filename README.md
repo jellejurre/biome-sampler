@@ -8,8 +8,8 @@ maven {url "https://jitpack.io"}
 
 and the following to your build.gradle dependencies block:
 ```
-implementation 'com.github.jellejurre:biome-sampler:main-SNAPSHOT'
-implementation 'com.github.kallestruik:noise-sampler:master-SNAPSHOT'
+implementation 'com.github.jellejurre:biome-sampler:1.0.0"
+implementation 'com.github.kallestruik:noise-sampler:1.0.0"
 ```
 
 ## Credits
