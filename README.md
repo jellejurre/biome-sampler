@@ -3,13 +3,12 @@
 
 Add the following to your build.gradle repositories block
 ```
-maven {url "https://jitpack.io"}
+maven {url "https://repo.jellejurre.dev"}
 ```
 
 and the following to your build.gradle dependencies block:
 ```
-implementation 'com.github.jellejurre:biome-sampler:1.0.1"
-implementation 'com.github.kallestruik:noise-sampler:1.0.0"
+implementation 'com.github.jellejurre:biome-sampler:1.0.2"
 ```
 
 ## Credits

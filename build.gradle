@@ -5,12 +5,12 @@ plugins {
 
 def ENV = System.getenv()
 
-group 'org.example'
-version '1.0-SNAPSHOT'
+group 'com.github.jellejurre'
+version '1.0.2'
 
 repositories {
     mavenCentral()
-    maven {url "https://jitpack.io"}
+    maven {url "https://repo.jellejurre.dev"}
 }
 
 dependencies {
