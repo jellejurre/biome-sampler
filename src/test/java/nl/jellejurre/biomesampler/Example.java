@@ -20,7 +20,7 @@ public class Example {
         Biome endBiome = endSampler.getBiomeFromBlockPos(1162, 66, -575);
 
         assertEquals(Biome.DARK_FOREST, overworldBiome);
-        assertEquals(Biome.NETHER_WASTES, netherBiome);
-        assertEquals(Biome.END_BARRENS, endBiome);
+        assertEquals(Biome.CRIMSON_FOREST, netherBiome);
+        assertEquals(Biome.END_MIDLANDS, endBiome);
     }
 }
