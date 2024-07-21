@@ -1,9 +1,3 @@
-/*
- * Decompiled with CFR 0.0.9 (FabricMC cc05e23f).
- *
- * Could not load the following classes:
- *  org.jetbrains.annotations.Nullable
- */
 package nl.jellejurre.biomesampler.minecraft;
 
 import java.util.Arrays;
@@ -17,6 +11,8 @@ public enum Biome {
     ICE_SPIKES("ice_spikes", Category.ICY),
     DESERT("desert", Category.DESERT),
     SWAMP("swamp", Category.SWAMP),
+    // "mangrove_swamp" was added in 1.19
+    MANGROVE_SWAMP("mangrove_swamp", Category.SWAMP),
     FOREST("forest", Category.FOREST),
     FLOWER_FOREST("flower_forest", Category.FOREST),
     BIRCH_FOREST("birch_forest", Category.FOREST),
@@ -35,10 +31,12 @@ public enum Biome {
     JUNGLE("jungle", Category.JUNGLE),
     SPARSE_JUNGLE("sparse_jungle", Category.JUNGLE),
     BAMBOO_JUNGLE("bamboo_jungle", Category.JUNGLE),
-    BADLANDS("mesa", Category.MESA),
-    ERODED_BADLANDS("eroded_badlands", Category.MESA),
-    WOODED_BADLANDS("wooded_badlands", Category.MESA),
+    BADLANDS("badlands", Category.BADLANDS),
+    ERODED_BADLANDS("eroded_badlands", Category.BADLANDS),
+    WOODED_BADLANDS("wooded_badlands", Category.BADLANDS),
     MEADOW("meadow", Category.MOUNTAIN),
+    // "cherry_grove" was added in 1.20
+    CHERRY_GROVE("cherry_grove", Category.MOUNTAIN),
     GROVE("grove", Category.FOREST),
     SNOWY_SLOPES("snowy_slopes", Category.MOUNTAIN),
     FROZEN_PEAKS("frozen_peaks", Category.MOUNTAIN),
@@ -61,16 +59,19 @@ public enum Biome {
     MUSHROOM_FIELDS("mushroom_fields", Category.MUSHROOM),
     DRIPSTONE_CAVES("dripstone_caves", Category.UNDERGROUND),
     LUSH_CAVES("lush_caves", Category.UNDERGROUND),
+    //"deep_dark" was added in 1.19
+    DEEP_DARK("deep_dark", Category.UNDERGROUND),
     NETHER_WASTES("nether_wastes", Category.NETHER),
     WARPED_FOREST("warped_forest", Category.NETHER),
     CRIMSON_FOREST("crimson_forest", Category.NETHER),
-    SOUL_SAND_VALLEY("soulSand_valley", Category.NETHER),
+    SOUL_SAND_VALLEY("soul_sand_valley", Category.NETHER),
     BASALT_DELTAS("basalt_deltas", Category.NETHER),
     THE_END("the_end", Category.THEEND),
     END_HIGHLANDS("end_highlands", Category.THEEND),
     END_MIDLANDS("end_midlands", Category.THEEND),
     SMALL_END_ISLANDS("small_end_islands", Category.THEEND),
     END_BARRENS("end_barrens", Category.THEEND);
+
     private final String name;
     private final Category category;
 
@@ -87,13 +88,11 @@ public enum Biome {
         return this.category;
     }
 
-    public static enum Category
-    {
-        NONE("none"),
+    public enum Category {
         TAIGA("taiga"),
         EXTREME_HILLS("extreme_hills"),
         JUNGLE("jungle"),
-        MESA("mesa"),
+        BADLANDS("badlands"),
         PLAINS("plains"),
         SAVANNA("savanna"),
         ICY("icy"),
@@ -112,7 +111,7 @@ public enum Biome {
         private static final Map<String, Category> BY_NAME;
         private final String name;
 
-        private Category(String name) {
+        Category(String name) {
             this.name = name;
         }
 
@@ -124,13 +123,8 @@ public enum Biome {
             return BY_NAME.get(name);
         }
 
-        public String asString() {
-            return this.name;
-        }
-
         static {
             BY_NAME = Arrays.stream(Category.values()).collect(Collectors.toMap(Category::getName, category -> category));
         }
     }
 }
-
